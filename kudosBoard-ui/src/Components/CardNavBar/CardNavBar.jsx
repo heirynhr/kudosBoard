@@ -8,6 +8,10 @@ export default function CardNavBar() {
     navigate("/");
   };
 
+  const handleNewCardModal = () => {
+    console.log("This is the new CARD MODAL");
+  };
+
   return (
     <>
       <div className="card-navbar">
@@ -15,7 +19,7 @@ export default function CardNavBar() {
           Kudos Board
         </h2>
 
-        <button>Create a Card</button>
+        <button onClick={handleNewCardModal}>Create a Card</button>
 
         <h2>THIS IS THE CARD NAVBAR</h2>
       </div>
