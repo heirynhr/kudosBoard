@@ -1,0 +1,17 @@
+.card-navbar {
+  background-color: rgb(187, 186, 186);
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cardNavBar-title {
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s ease-in-out;
+}
+
+.cardNavBar-title:hover {
+  color: rgb(44, 63, 108);
+}
