@@ -1,19 +1,25 @@
 import "./Home.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// import Navbar from "./Components/MainNavbar/MainNavbar.jsx";
-// import Boards from "../Components/Boards/Boards.jsx";
-// import Footer from "../Components/Footer/Footer.jsx";
-
 import Boards from "../Boards/Boards.jsx";
 import Footer from "../Footer/Footer.jsx";
 import MainNavbar from "../MainNavbar/MainNavbar.jsx";
+import NewBoardModal from "../NewBoardModal/NewBoardModal.jsx";
+import { useState } from "react";
 
-export default function App() {
+export default function Home() {
+  const [handleModalOpen, setHandleModalOpen] = useState(false);
+
+  const handleDataFromChild = (openModalStatus) => {
+    setHandleModalOpen(openModalStatus);
+    console.log("The data from child is ", openModalStatus);
+  };
+
   return (
     <div>
-      <MainNavbar />
+      <MainNavbar onSendData={handleDataFromChild} />
       <Boards />
+      {handleModalOpen && <NewBoardModal onCloseModal={handleDataFromChild} />}
       <Footer />
     </div>
   );

@@ -1,7 +1,15 @@
 import { useState } from "react";
 import "./MainNavbar.css";
 
-function App() {
+function MainNavbar({ onSendData }) {
+
+
+  const sendModalStatusToParent = () => {
+    //This sends the data up to the parents
+    // setNewBoard(!newBoard);
+    onSendData(true);
+  };
+
   return (
     <>
       <nav className="navbar">
@@ -14,7 +22,10 @@ function App() {
             <button>Celebration</button>
             <button>Thank You</button>
             <button>Inspiration</button>
-            <button>Create a New Board</button>
+
+            <button onClick={sendModalStatusToParent}>
+              Create a New Board
+            </button>
           </div>
         </div>
       </nav>
@@ -22,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export default MainNavbar;
