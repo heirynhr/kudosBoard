@@ -1,10 +1,19 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./Components/App/App";
+
+import Home from "./Components/Home/Home.jsx";
+import CardPage from "./Components/CardPage/CardPage.jsx";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cards" element={<CardPage />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );
