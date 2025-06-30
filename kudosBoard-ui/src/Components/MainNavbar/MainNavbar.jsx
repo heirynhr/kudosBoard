@@ -2,12 +2,10 @@ import { useState } from "react";
 import "./MainNavbar.css";
 
 function App() {
-
-
   return (
     <>
       <nav className="navbar">
-        <h1>Kudos Board</h1>
+        <h1 className="main-title">Kudos Board</h1>
         <div className="right-side-navbar">
           <input type="text" placeholder="SEARCH HERE" className="search-bar" />
           <div className="sorting-area">

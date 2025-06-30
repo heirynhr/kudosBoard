@@ -14,6 +14,9 @@ export default function CardNavBar() {
         <h2 onClick={handleBackToHomePage} className="cardNavBar-title">
           Kudos Board
         </h2>
+
+        <button>Create a Card</button>
+
         <h2>THIS IS THE CARD NAVBAR</h2>
       </div>
     </>

@@ -15,3 +15,20 @@
 .cardNavBar-title:hover {
   color: rgb(44, 63, 108);
 }
+
+.card-navbar button {
+  background-color: rgb(187, 186, 186);
+  padding: 10px 20px 10px 20px;
+  transition: 0.2s ease-in-out;
+  outline: 1px solid black;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: 700;
+}
+
+.card-navbar button:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  cursor: pointer;
+}
