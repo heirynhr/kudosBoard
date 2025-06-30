@@ -1,7 +1,7 @@
 import "./CardNavBar.css";
 import { useNavigate } from "react-router-dom";
 
-export default function CardNavBar() {
+export default function CardNavBar({ setShowModal }) {
   const navigate = useNavigate();
 
   const handleBackToHomePage = () => {
@@ -10,6 +10,7 @@ export default function CardNavBar() {
 
   const handleNewCardModal = () => {
     console.log("This is the new CARD MODAL");
+    setShowModal(true);
   };
 
   return (
