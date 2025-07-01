@@ -9,7 +9,8 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 80px;
-  background-color: rgb(200, 200, 200);
+  /* background-color: rgb(200, 200, 200); */
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
   width: 100%;
   padding: 20px;
 }
@@ -18,14 +19,44 @@
   padding: 10px;
   border-radius: 5px;
   border: none;
-  padding-right: 100px;
+
+  width: 350px;
+  min-width: 200px;
+  background-color: transparent;
+  outline: 1px solid rgb(174, 172, 172);
+  font-size: 1em;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
 }
 
 .search-bar:focus {
   border: none;
-  outline: none;
+  outline: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  font-weight: 300;
 }
 
+.search-bar-container {
+  /* outline: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+}
+
+.material-symbols-outlined {
+  position: absolute;
+  top: 15%;
+  right: 3%;
+  color: white;
+}
+
+.material-symbols-outlined:hover {
+  user-select: none;
+  cursor: pointer;
+}
 .right-side-navbar {
   display: flex;
   flex-direction: row;
@@ -44,10 +75,13 @@
   border-radius: 5px;
   border: none;
   font-weight: 500;
+  background-color: transparent;
+  outline: 1px solid rgb(109, 109, 109);
 }
 
 .sorting-area button:hover {
-  background-color: rgb(148, 148, 148);
+  background-color: rgb(255, 255, 255);
+  color: black;
   outline: none;
   border: none;
   cursor: pointer;
@@ -56,4 +90,5 @@
 .main-title {
   user-select: none;
   cursor: pointer;
+  color: white;
 }
