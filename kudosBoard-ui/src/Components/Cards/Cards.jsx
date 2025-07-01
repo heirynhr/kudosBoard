@@ -1,15 +1,15 @@
 import "./Cards.css";
 
-export default function Cards() {
+export default function Cards({ title, description, gif, author, likes }) {
   return (
     <>
       <div className="card-container">
-        <h2 className="title">Card Title</h2>
-        <h3 className="description">Card Description</h3>
-        <img className="gif" src="" alt="gif" />
-        <p className="author">Author</p>
+        <h2 className="title">{title}</h2>
+        <h3 className="description">{description}</h3>
+        <img className="gif" src={gif} alt="gif" />
+        <p className="author">{author}</p>
         <div className="buttons">
-          <button className="upvote-btn">Upvote: 5</button>
+          <button className="upvote-btn">Upvote: {likes}</button>
           <button className="delete-btn">Delete</button>
         </div>
       </div>
