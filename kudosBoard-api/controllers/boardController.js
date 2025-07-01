@@ -8,8 +8,8 @@ exports.getAll = async (req, res) => {
     const filters = {}
     if (category) {
         filters.category = {
-            equals: category,
-            mode: "insensitive",
+            catKey: {equals: category,
+            mode: "insensitive"}
         }
     } 
     let orderFilter;
@@ -22,8 +22,9 @@ exports.getAll = async (req, res) => {
         where: filters,
         orderBy: orderFilter,
         include: {
+            category: true,
             cards: true,
-        }
+        },
     });
     res.json(boardList);
 };
@@ -44,9 +45,9 @@ exports.getById = async (req, res) => {
 
 // POST create a NEW board 
 exports.create = async (req, res) => {
-    const { title, coverImg, description, author, category, cards} = req.body;
+    const { title, coverImg, description, author, categoryId} = req.body;
     const newBoard = await prisma.board.create({
-        data: { title, coverImg, description, author, category},
+        data: { title, coverImg, description, author, categoryId},
         include: {
             cards: true,
         }
