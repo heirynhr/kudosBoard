@@ -1,14 +1,9 @@
+import { useEffect, useState } from "react";
 import "./Boards.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Boards() {
+export default function Boards(props) {
   const navigate = useNavigate();
-
-  const cardInfo = {
-    img: "",
-    title: "THIS IS TITLE 1",
-    category: "THIS IS CATEGORY",
-  };
 
   const handleCardClick = () => {
     navigate("/cards");
@@ -17,9 +12,9 @@ export default function Boards() {
   return (
     <>
       <div className="card-tile" onClick={handleCardClick}>
-        <img src={cardInfo.img} alt="img" />
-        <h2>{cardInfo.title}</h2>
-        <p>{cardInfo.category}</p>
+        <img src={props.image} alt="img" />
+        <h2>{props.title}</h2>
+        <p>{props.category}</p>
       </div>
     </>
   );
