@@ -19,8 +19,8 @@ model Board {
   author String
   coverImg String
   description String
-  category String
-
+  category Category @relation(fields: [categoryId], references: [categoryId])
+  categoryId Int
   createdAt DateTime @default(now())
   cards Card[]
 }
@@ -38,4 +38,11 @@ model Card {
 
   boardId Int 
   board Board @relation(fields: [boardId], references: [boardId], onDelete: Cascade)
+}
+
+model Category {
+  categoryId Int @id @default(autoincrement())
+  catKey String
+  displayName String
+  boards Board[] 
 }
