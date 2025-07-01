@@ -11,4 +11,6 @@ router.post("/", controller.create);
 // cards/:cardId
 router.delete("/:cardId", controller.remove);
 
+// - > /cards/BoardID
+router.get("/:boardId", controller.getById)
 module.exports = router;
