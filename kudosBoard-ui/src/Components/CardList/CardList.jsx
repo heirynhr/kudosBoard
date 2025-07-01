@@ -37,7 +37,7 @@ export default function CardList({ boardId }) {
 
   return (
     <>
-      <div className="card-container">
+      <div className="card-list-container">
         {cards.map((c) => (
           // Looping through cards
           <Cards
