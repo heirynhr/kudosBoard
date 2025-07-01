@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./MainNavbar.css";
 
 function MainNavbar({ onSendData }) {
-
-
   const sendModalStatusToParent = () => {
     //This sends the data up to the parents
     // setNewBoard(!newBoard);
@@ -15,7 +13,10 @@ function MainNavbar({ onSendData }) {
       <nav className="navbar">
         <h1 className="main-title">Kudos Board</h1>
         <div className="right-side-navbar">
-          <input type="text" placeholder="SEARCH HERE" className="search-bar" />
+          <div className="search-bar-container">
+            <input type="text" className="search-bar" />
+            <span className="material-symbols-outlined">search</span>
+          </div>
           <div className="sorting-area">
             <button>All</button>
             <button>Recent</button>

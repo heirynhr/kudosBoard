@@ -32,6 +32,9 @@
   font-size: 2em;
   display: flex;
   justify-content: end;
+
+  width: fit-content;
+  margin-left: auto;
 }
 
 .board-close-logo:hover {
