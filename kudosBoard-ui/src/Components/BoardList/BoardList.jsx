@@ -28,6 +28,7 @@ export default function BoardList() {
           return (
             <div>
               <Boards
+                id={boards.boardId}
                 image={boards.coverImg}
                 title={boards.title}
                 category={boards.category.catKey}

@@ -6,13 +6,13 @@ export default function Boards(props) {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate("/cards");
+    navigate(`/cards/${props.id}`);
   };
 
   return (
     <>
       <div className="card-tile" onClick={handleCardClick}>
-        <img src={props.image} alt="img" />
+        <img src={props.image} alt="img" className="card-img" />
         <h2>{props.title}</h2>
         <p>{props.category}</p>
       </div>
