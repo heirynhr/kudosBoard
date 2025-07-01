@@ -5,8 +5,9 @@ export default function Boards() {
   const navigate = useNavigate();
 
   const cardInfo = {
+    img: "",
     title: "THIS IS TITLE 1",
-    description: "THIS IS DESCRIPTION 1",
+    category: "THIS IS CATEGORY",
   };
 
   const handleCardClick = () => {
@@ -16,8 +17,9 @@ export default function Boards() {
   return (
     <>
       <div className="card-tile" onClick={handleCardClick}>
+        <img src={cardInfo.img} alt="img" />
         <h2>{cardInfo.title}</h2>
-        <p>{cardInfo.description}</p>
+        <p>{cardInfo.category}</p>
       </div>
     </>
   );

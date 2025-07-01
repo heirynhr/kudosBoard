@@ -40,9 +40,9 @@
   font-size: 1.5em;
   cursor: pointer;
   transition: background 0.2s ease;
+  background-color: rgb(233, 233, 233);
 }
 .close-btn:hover {
-  color: #dddddd48;
   background-color: rgb(233, 233, 233);
 }
 
