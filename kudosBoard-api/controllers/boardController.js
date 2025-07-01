@@ -45,9 +45,9 @@ exports.getById = async (req, res) => {
 
 // POST create a NEW board 
 exports.create = async (req, res) => {
-    const { title, coverImg, description, author, categoryId} = req.body;
+    const { title, coverImg, author, categoryId} = req.body;
     const newBoard = await prisma.board.create({
-        data: { title, coverImg, description, author, categoryId},
+        data: { title, coverImg, author, categoryId},
         include: {
             cards: true,
         }

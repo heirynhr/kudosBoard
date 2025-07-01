@@ -18,7 +18,6 @@ model Board {
   title String
   author String
   coverImg String
-  description String
   category Category @relation(fields: [categoryId], references: [categoryId])
   categoryId Int
   createdAt DateTime @default(now())
