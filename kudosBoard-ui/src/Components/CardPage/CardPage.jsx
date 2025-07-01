@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import Cards from "../Cards/Cards.jsx";
+import { useParams } from "react-router-dom";
+import CardList from "../CardList/CardList.jsx";
 import CardNavBar from "../CardNavBar/CardNavBar.jsx";
 import Footer from "../Footer/Footer.jsx";
 import NewCardModal from "../NewCardModal/NewCardModal.jsx";
 
 export default function CardPage() {
+  const { boardId } = useParams();
   const [showModal, setShowModal] = useState(false);
 
   const handleShowModal = () => {
@@ -22,7 +24,7 @@ export default function CardPage() {
     <>
       <div>
         <CardNavBar setShowModal={handleShowModal} />
-        <Cards />
+        <CardList boardId={boardId} />
         <Footer />
       </div>
       <NewCardModal showModal={showModal} onClose={handleClose} />
