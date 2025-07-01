@@ -8,6 +8,7 @@ exports.getAll = async (req, res) => {
     res.json(cardList);
 };
 
+
 // POST create a NEW card 
 exports.create = async (req, res) => {
     const { title, cardImg, description, author, likes, boardId } = req.body;
@@ -26,3 +27,12 @@ exports.remove = async (req, res) => {
     });
     res.status(204).end();
 };
+
+exports.getById = async (req,res) => {
+    const boardId = Number(req.params.boardId); 
+    const boardCards = await prisma.card.findMany({ 
+        where: { boardId }
+    });
+    if (!boardCards) return res.status(404).json({ error: "Board not found!" });
+    res.json(boardCards);
+}
