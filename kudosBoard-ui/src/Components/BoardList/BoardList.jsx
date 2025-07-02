@@ -11,7 +11,7 @@ export default function BoardList({ sortOption }) {
       try {
         if (sortOption.toLowerCase() === "recent") {
           const { data } = await axios.get(
-            `http://localhost:3000/boards?sort=${sortOption}`
+            `http://localhost:3000/boards?sort=${sortOption.toLowerCase()}`
           );
           setBoardData(data);
         } else if (sortOption.toLowerCase() === "all") {
@@ -24,7 +24,8 @@ export default function BoardList({ sortOption }) {
           setBoardData(data);
         } else {
           const { data } = await axios.get(
-            `http://localhost:3000/boards?category=${sortOption}`
+
+            `http://localhost:3000/boards?category=${sortOption.toLowerCase()}`
           );
           setBoardData(data);
         }
