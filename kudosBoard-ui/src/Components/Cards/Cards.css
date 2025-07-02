@@ -1,4 +1,4 @@
-.card-container {
+/* .card-container {
   background-color: rgb(182, 182, 182);
   margin: 30px;
   display: flex;
@@ -18,4 +18,30 @@
   transform: translateY(-5px);
   background-color: rgb(87, 87, 87);
   color: white;
+} */
+
+.card-container {
+  background-color: rgb(182, 182, 182);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  margin: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 45vh;
+}
+
+.gif {
+  width: 100%;
+  border-radius: 5px;
+  height: 75%;
+  object-fit: cover;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 15px;
 }
