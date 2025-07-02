@@ -10,16 +10,24 @@ import { useState } from "react";
 
 export default function Home() {
   const [handleModalOpen, setHandleModalOpen] = useState(false);
+  const [sortOption, setSortOption] = useState("");
 
   const handleDataFromChild = (openModalStatus) => {
     setHandleModalOpen(openModalStatus);
     console.log("The data from child is ", openModalStatus);
   };
 
+  const handleSortOption = (sortOption) => {
+    setSortOption(sortOption);
+  };
+
   return (
     <div>
-      <MainNavbar onSendData={handleDataFromChild} />
-      <BoardList />
+      <MainNavbar
+        onSendData={handleDataFromChild}
+        onSortOption={handleSortOption}
+      />
+      <BoardList sortOption={sortOption} />
       {handleModalOpen && <NewBoardModal onCloseModal={handleDataFromChild} />}
       <Footer />
     </div>
