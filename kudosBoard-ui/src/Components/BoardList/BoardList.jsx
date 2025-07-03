@@ -94,7 +94,7 @@ export default function BoardList({ sortOption, searchInput }) {
                 id={boards.boardId}
                 image={boards.coverImg}
                 title={boards.title}
-                category={boards.category.catKey}
+                category={boards.category.displayName}
                 onDelete={handleBoardDelete}
               />
             </div>

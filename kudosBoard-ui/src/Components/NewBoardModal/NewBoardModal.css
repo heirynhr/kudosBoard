@@ -16,8 +16,8 @@
 }
 
 .board-modal-content {
-  color: rgb(0, 0, 0);
-  background-color: rgb(233, 233, 233);
+  color: #182848;
+  background-color: #e1ddd6;
   display: flex;
   flex-direction: column;
   width: 30%;
@@ -46,6 +46,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  font-weight: bolder;
+  font-size: 1.3em;
 }
 
 .board-input {
@@ -54,7 +56,7 @@
   border-radius: 5px;
   background-color: rgb(233, 233, 233);
   outline: 1px solid black;
-  color: black;
+  color: #182848;
 }
 
 .board-input:focus {
@@ -68,6 +70,8 @@
   padding: 10px;
   margin-top: 15px;
   gap: 20px;
+  font-weight: bolder;
+  font-size: 1.3em;
 }
 
 .one-input-section {
@@ -78,8 +82,9 @@
 
 .cat-dropdown {
   padding: 10px;
-  background-color: rgb(73, 73, 73);
-  color: rgb(255, 255, 255);
+  background-color: #dadad6;
+  font-weight: bold;
+  color: #182848;
 }
 .cat-dropdown:hover {
   background-color: rgb(233, 233, 233);
@@ -91,7 +96,7 @@
 .board-button {
   padding: 10px;
   width: 70%;
-  background-color: rgb(73, 73, 73);
+  background-color: #182848;
   border: none;
   border-radius: 5px;
   transition: 0.2s ease-in-out;
