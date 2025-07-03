@@ -14,17 +14,36 @@ export default function NewBoardModal({ onCloseModal }) {
     onCloseModal(false);
   };
 
+    const getImg = (boardCat) => {
+    if ( boardCat === 1) {
+      return "https://images.pexels.com/photos/772478/pexels-photo-772478.jpeg"
+    }
+    if ( boardCat === 2) {
+      console.log(boardCat)
+      
+      return "https://images.pexels.com/photos/8716181/pexels-photo-8716181.jpeg"
+    }
+    if (boardCat == 3){
+      return "https://images.pexels.com/photos/31356615/pexels-photo-31356615.jpeg"
+    }
+  }
+
   // handles the request to make a new board
   const handleCreateBoard = async () => {
+    if (!boardTitle.trim()) {
+      alert("No can do. Title is required.");
+      // get out of the function if necessary
+      return; 
+    }
     // creates the new obj needed to feed the database the board attributes
     const newBoardData = {
       title: boardTitle,
       author: boardAuthor,
       categoryId: Number(boardCat),
-      coverImg:
-        "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2xmNGQxbHhnZXp6dG93OXo2MDV1YjF3NHIzeXdoMDMzbXhwdm4yZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ASd0Ukj0y3qMM/giphy.gif",
+      coverImg: getImg(Number(boardCat)),
     };
 
+    console.log(newBoardData.coverImg)
     console.log(newBoardData);
 
     try {
