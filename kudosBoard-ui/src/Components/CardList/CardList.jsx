@@ -26,15 +26,24 @@ export default function CardList({ boardId, newCard, setNewCard }) {
     setNewCard(false);
   }, [boardId, newCard]);
 
-  // setCards([
-  //   {
-  //     title: "THIS IS TITLE 1",
-  //     description: "a description",
-  //     img: "",
-  //     author: "AUTHOR",
-  //     likes: 6,
-  //   },
-  // ]);
+  const handleCardDelete = async (cardId) => {
+    try {
+      // makes the request using the routes and feeds it the data
+      const response = await axios.delete(
+        `http://localhost:3000/cards/${cardId}`
+      );
+      alert("Card has been successfully DELETED!");
+
+      // need to make sure that the boardlist reloads and fetches the updated database
+      const updatedCards = cards.filter((card) => {
+        return card.cardId !== cardId;
+      });
+      // need to update the new list
+      setCards(updatedCards);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -43,11 +52,13 @@ export default function CardList({ boardId, newCard, setNewCard }) {
           // Looping through cards
           <Cards
             key={c.cardId}
+            cardId={c.cardId}
             title={c.title}
             description={c.description}
             gif={c.cardImg}
             author={c.author}
             likes={c.likes}
+            handleCardDelete={handleCardDelete}
           />
         ))}
       </div>
