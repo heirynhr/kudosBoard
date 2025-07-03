@@ -10,7 +10,8 @@ router.get("/", controller.getAll);
 router.post("/", controller.create);
 // cards/:cardId
 router.delete("/:cardId", controller.remove);
-
+// -> cards/:cardId update card
+router.put("/:cardId", controller.update);
 // - > /cards/BoardID
 router.get("/:boardId", controller.getById)
 module.exports = router;

@@ -9,6 +9,8 @@ import NewCardModal from "../NewCardModal/NewCardModal.jsx";
 export default function CardPage() {
   const { boardId } = useParams();
   const [showModal, setShowModal] = useState(false);
+  const [newCard, setNewCard] = useState(false);
+  console.log("CardPage boardId prop:", boardId);
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -24,10 +26,15 @@ export default function CardPage() {
     <>
       <div>
         <CardNavBar setShowModal={handleShowModal} />
-        <CardList boardId={boardId} />
+        <CardList boardId={boardId} newCard={newCard} setNewCard={setNewCard} />
         <Footer />
       </div>
-      <NewCardModal showModal={showModal} onClose={handleClose} />
+      <NewCardModal
+        showModal={showModal}
+        onClose={handleClose}
+        boardId={boardId}
+        setNewCard={setNewCard}
+      />
     </>
   );
 }

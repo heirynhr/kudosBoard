@@ -36,3 +36,14 @@ exports.getById = async (req,res) => {
     if (!boardCards) return res.status(404).json({ error: "Board not found!" });
     res.json(boardCards);
 }
+
+//PUT update card - mostly for the likes
+exports.update = async (req, res) => {
+    const cardId = Number(req.params.cardId);
+    const { likes} = req.body;
+    const updatedCard = await prisma.card.update({
+        where: { cardId },
+        data: { likes},
+    });
+    res.json(updatedCard);
+};
