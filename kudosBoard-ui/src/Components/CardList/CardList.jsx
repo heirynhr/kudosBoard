@@ -4,7 +4,7 @@ import axios from "axios";
 import "./CardList.css";
 import Cards from "../Cards/Cards.jsx";
 
-export default function CardList({ boardId }) {
+export default function CardList({ boardId, newCard, setNewCard }) {
   const [cards, setCards] = useState([]);
 
   // Fetching initial data
@@ -23,7 +23,8 @@ export default function CardList({ boardId }) {
       }
     };
     fetchCards();
-  }, [boardId]);
+    setNewCard(false);
+  }, [boardId, newCard]);
 
   // setCards([
   //   {
