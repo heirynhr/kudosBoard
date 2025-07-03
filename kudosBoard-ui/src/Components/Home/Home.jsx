@@ -11,6 +11,7 @@ export default function Home() {
   const [handleModalOpen, setHandleModalOpen] = useState(false);
   const [sortOption, setSortOption] = useState("");
   const [searchInput, setSearchInput] = useState("");
+  const [newBoard, setNewBoard] = useState(false);
 
   const handleDataFromChild = (openModalStatus) => {
     setHandleModalOpen(openModalStatus);
@@ -37,8 +38,18 @@ export default function Home() {
         onSearchData={handleSearch}
         onClearSearch={clearSearch}
       />
-      <BoardList sortOption={sortOption} searchInput={searchInput} />
-      {handleModalOpen && <NewBoardModal onCloseModal={handleDataFromChild} />}
+      <BoardList
+        sortOption={sortOption}
+        searchInput={searchInput}
+        newBoard={newBoard}
+        setNewBoard={setNewBoard}
+      />
+      {handleModalOpen && (
+        <NewBoardModal
+          onCloseModal={handleDataFromChild}
+          setNewBoard={setNewBoard}
+        />
+      )}
       <Footer />
     </div>
   );

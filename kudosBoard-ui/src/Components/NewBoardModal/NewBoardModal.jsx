@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./NewBoardModal.css";
 
-export default function NewBoardModal({ onCloseModal }) {
+export default function NewBoardModal({ onCloseModal, setNewBoard }) {
   const [boardTitle, setboardTitle] = useState("");
   //this is needed to take into account the category id for the baord
   const [boardCat, setboardCat] = useState(1);
@@ -14,26 +14,26 @@ export default function NewBoardModal({ onCloseModal }) {
     onCloseModal(false);
   };
 
-    const getImg = (boardCat) => {
-    if ( boardCat === 1) {
-      return "https://images.pexels.com/photos/772478/pexels-photo-772478.jpeg"
+  const getImg = (boardCat) => {
+    if (boardCat === 1) {
+      return "https://images.pexels.com/photos/772478/pexels-photo-772478.jpeg";
     }
-    if ( boardCat === 2) {
-      console.log(boardCat)
-      
-      return "https://images.pexels.com/photos/8716181/pexels-photo-8716181.jpeg"
+    if (boardCat === 2) {
+      console.log(boardCat);
+
+      return "https://images.pexels.com/photos/8716181/pexels-photo-8716181.jpeg";
     }
-    if (boardCat == 3){
-      return "https://images.pexels.com/photos/31356615/pexels-photo-31356615.jpeg"
+    if (boardCat == 3) {
+      return "https://images.pexels.com/photos/31356615/pexels-photo-31356615.jpeg";
     }
-  }
+  };
 
   // handles the request to make a new board
   const handleCreateBoard = async () => {
     if (!boardTitle.trim()) {
       alert("No can do. Title is required.");
       // get out of the function if necessary
-      return; 
+      return;
     }
     // creates the new obj needed to feed the database the board attributes
     const newBoardData = {
@@ -43,7 +43,7 @@ export default function NewBoardModal({ onCloseModal }) {
       coverImg: getImg(Number(boardCat)),
     };
 
-    console.log(newBoardData.coverImg)
+    console.log(newBoardData.coverImg);
     console.log(newBoardData);
 
     try {
@@ -57,6 +57,7 @@ export default function NewBoardModal({ onCloseModal }) {
       console.log(err);
     }
     handleCloseModal();
+    setNewBoard(true);
   };
 
   return (
