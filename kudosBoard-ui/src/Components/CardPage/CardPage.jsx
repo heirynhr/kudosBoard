@@ -27,7 +27,7 @@ export default function CardPage() {
       <div>
         <CardNavBar setShowModal={handleShowModal} />
         <CardList boardId={boardId} newCard={newCard} setNewCard={setNewCard} />
-        <Footer />
+        {/* <Footer /> */}
       </div>
       <NewCardModal
         showModal={showModal}
