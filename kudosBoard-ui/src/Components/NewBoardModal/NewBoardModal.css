@@ -93,7 +93,7 @@
   cursor: pointer;
 }
 
-.board-button {
+button.board-button {
   padding: 10px;
   width: 70%;
   background-color: #182848;
@@ -103,8 +103,8 @@
   font-weight: 700;
 }
 
-.board-button:hover {
-  background-color: rgb(233, 233, 233);
+button.board-button:hover {
+  background-color: #a0c3f4;
   outline: 1px solid black;
   color: rgb(0, 0, 0);
   cursor: pointer;
@@ -113,7 +113,7 @@
 .board-button-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 
