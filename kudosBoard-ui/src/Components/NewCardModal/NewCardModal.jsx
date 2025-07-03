@@ -25,6 +25,12 @@ export default function NewCardModal({
   }, [boardId]);
 
   const handleSubmit = async () => {
+    // Basic validation
+    if (!userInfo.title.trim() || !userInfo.cardImg.trim()) {
+      alert("Please provide at least a title and a GIF URL.");
+      return;
+    }
+
     console.log("boardId: ", boardId);
     console.log("userInfo: ", userInfo);
     try {
