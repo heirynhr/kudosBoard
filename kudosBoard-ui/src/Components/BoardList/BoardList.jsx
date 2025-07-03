@@ -43,6 +43,26 @@ export default function BoardList({ sortOption }) {
   //   console.log(sortOption);
   // };
 
+  const handleBoardDelete = async (boardId) => {
+    try {
+      // makes the request using the routes and feeds it the data
+      const response = await axios.delete(
+        `http://localhost:3000/boards/${boardId}`,
+      );
+      alert('Board has been successfully DELETED!')
+
+      // need to make sure that the boardlist reloads and fetches the updated database
+      const updatedBoards = boardData.filter((board) => {
+        return board.boardId !== boardId;
+      });
+      // need to update the new list
+      setBoardData(updatedBoards);
+
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <div className="board-list-container">
@@ -54,6 +74,7 @@ export default function BoardList({ sortOption }) {
                 image={boards.coverImg}
                 title={boards.title}
                 category={boards.category.catKey}
+                onDelete={handleBoardDelete}
               />
             </div>
           );
