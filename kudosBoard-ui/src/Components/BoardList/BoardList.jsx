@@ -79,6 +79,7 @@ export default function BoardList({ sortOption, searchInput }) {
       });
       // need to update the new list
       setBoardData(updatedBoards);
+      setDisplayedBoards(updatedBoards);
     } catch (err) {
       console.log(err);
     }
