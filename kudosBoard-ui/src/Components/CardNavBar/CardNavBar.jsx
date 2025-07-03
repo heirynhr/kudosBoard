@@ -22,7 +22,7 @@ export default function CardNavBar({ setShowModal }) {
 
         <button onClick={handleNewCardModal}>Create a Card</button>
 
-        <h2>THIS IS THE CARD NAVBAR</h2>
+        {/* <h2>THIS IS THE CARD NAVBAR</h2> */}
       </div>
     </>
   );

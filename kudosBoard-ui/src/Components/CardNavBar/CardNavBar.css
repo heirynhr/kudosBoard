@@ -1,9 +1,10 @@
 .card-navbar {
-  background-color: rgb(187, 186, 186);
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
   padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: white;
 }
 
 .cardNavBar-title {
