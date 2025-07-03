@@ -102,3 +102,23 @@ h2 {
   justify-content: center;
   margin-top: 20px;
 }
+
+.gif-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.gif-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* background-color: red; */
+  gap: 20px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.gif-card:hover {
+  cursor: pointer;
+}
