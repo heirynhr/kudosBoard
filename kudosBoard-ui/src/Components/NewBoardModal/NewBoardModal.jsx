@@ -82,6 +82,7 @@ export default function NewBoardModal({ onCloseModal }) {
             <div className="one-input-section">
               <p> Select a Category:</p>
               <select
+                className="cat-dropdown"
                 value={boardCat}
                 onChange={(e) => setboardCat(e.target.value)}
               >
