@@ -76,6 +76,18 @@
   gap: 5px;
 }
 
+.cat-dropdown {
+  padding: 10px;
+  background-color: rgb(73, 73, 73);
+  color: rgb(255, 255, 255);
+}
+.cat-dropdown:hover {
+  background-color: rgb(233, 233, 233);
+  outline: 1px solid black;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
 .board-button {
   padding: 10px;
   width: 70%;
@@ -98,3 +110,5 @@
   justify-content: center;
   margin-top: 20px;
 }
+
+
