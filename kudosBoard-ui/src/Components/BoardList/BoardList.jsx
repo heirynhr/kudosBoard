@@ -28,7 +28,6 @@ export default function BoardList({ sortOption, searchInput }) {
           setDisplayedBoards(data);
         } else {
           const { data } = await axios.get(
-
             `http://localhost:3000/boards?category=${sortOption.toLowerCase()}`
           );
           setBoardData(data);
