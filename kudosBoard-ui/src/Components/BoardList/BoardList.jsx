@@ -3,7 +3,12 @@ import axios from "axios";
 import Boards from "../Boards/Boards";
 import { useState, useEffect } from "react";
 
-export default function BoardList({ sortOption, searchInput }) {
+export default function BoardList({
+  sortOption,
+  searchInput,
+  newBoard,
+  setNewBoard,
+}) {
   const [boardData, setBoardData] = useState([]);
   const [displayedBoards, setDisplayedBoards] = useState([]);
 
@@ -59,7 +64,8 @@ export default function BoardList({ sortOption, searchInput }) {
       setDisplayedBoards(searchedData);
     }
     console.log(searchedData);
-  }, [searchInput]);
+    setNewBoard(false);
+  }, [searchInput, newBoard]);
   // const handleSortOption = (sortOption) => {
   //   console.log(sortOption);
   // };
